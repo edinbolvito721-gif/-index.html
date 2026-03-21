@@ -22,35 +22,31 @@
       --bg2: #fff9fb;
       --bg3: #fffaf3;
 
-      --pink: rgba(255, 197, 221, 0.36);
-      --pink-2: rgba(255, 174, 210, 0.22);
-      --yellow: rgba(255, 228, 133, 0.34);
-      --yellow-2: rgba(255, 212, 92, 0.20);
+      --pink: rgba(255, 199, 222, 0.36);
+      --pink2: rgba(255, 181, 212, 0.22);
+      --yellow: rgba(255, 230, 138, 0.36);
+      --yellow2: rgba(255, 213, 93, 0.20);
 
-      --glass: rgba(255, 255, 255, 0.34);
-      --glass-strong: rgba(255, 255, 255, 0.52);
-      --glass-border: rgba(255, 255, 255, 0.58);
+      --glass: rgba(255,255,255,0.34);
+      --glass2: rgba(255,255,255,0.52);
+      --glassBorder: rgba(255,255,255,0.58);
 
-      --text: #7f6871;
-      --text-soft: #9b858e;
-      --text-light: #a998a0;
+      --text: #806872;
+      --textSoft: #9b858f;
+      --gold: #d7992f;
+      --gold2: #efb63b;
+      --gold3: #ffe07a;
 
-      --gold: #d7982f;
-      --gold-2: #efb63b;
-      --gold-3: #ffd868;
+      --green: #5fbe62;
+      --green2: #b8f39b;
+      --brown: #6c4320;
 
-      --green: #6dca6b;
-      --green-2: #a8ed8d;
-      --brown: #6a4321;
+      --shadow: 0 18px 50px rgba(255, 190, 214, 0.22);
+      --shadowSoft: 0 12px 30px rgba(255, 216, 120, 0.13);
 
-      --shadow: 0 18px 50px rgba(255, 191, 212, 0.22);
-      --shadow-soft: 0 10px 30px rgba(255, 214, 122, 0.12);
-      --shadow-gold: 0 12px 28px rgba(255, 211, 104, 0.28);
-
-      --blur: blur(18px);
       --radius-xl: 34px;
-      --radius-lg: 26px;
-      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-md: 22px;
     }
 
     html, body {
@@ -60,10 +56,10 @@
       font-family: "Poppins", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 8% 10%, rgba(255, 224, 235, 0.90), transparent 22%),
-        radial-gradient(circle at 90% 12%, rgba(255, 241, 178, 0.82), transparent 25%),
-        radial-gradient(circle at 18% 88%, rgba(255, 246, 216, 0.78), transparent 24%),
-        radial-gradient(circle at 85% 78%, rgba(255, 213, 230, 0.52), transparent 22%),
+        radial-gradient(circle at 10% 10%, rgba(255, 224, 236, 0.95), transparent 22%),
+        radial-gradient(circle at 88% 12%, rgba(255, 241, 180, 0.86), transparent 26%),
+        radial-gradient(circle at 18% 88%, rgba(255, 246, 214, 0.78), transparent 24%),
+        radial-gradient(circle at 86% 80%, rgba(255, 214, 230, 0.50), transparent 22%),
         linear-gradient(180deg, var(--bg1), var(--bg2) 48%, var(--bg3));
     }
 
@@ -72,10 +68,10 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      z-index: 0;
       background:
-        linear-gradient(135deg, rgba(255,255,255,0.25), transparent 28%, transparent 62%, rgba(255,255,255,0.10)),
-        radial-gradient(circle at center, rgba(255,255,255,0.18), transparent 60%);
+        linear-gradient(135deg, rgba(255,255,255,0.24), transparent 28%, transparent 60%, rgba(255,255,255,0.10)),
+        radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 60%);
+      z-index: 0;
     }
 
     .screen,
@@ -86,10 +82,10 @@
     }
 
     .screen {
+      z-index: 40;
       display: grid;
       place-items: center;
       padding: 22px;
-      z-index: 40;
       transition: opacity .8s ease, visibility .8s ease, transform .8s ease;
     }
 
@@ -114,16 +110,16 @@
       position: absolute;
       border-radius: 50%;
       filter: blur(24px);
-      opacity: .8;
+      opacity: .82;
       animation: drift 14s ease-in-out infinite;
     }
 
     .blob.pink {
-      background: radial-gradient(circle, rgba(255, 198, 220, 0.78), transparent 66%);
+      background: radial-gradient(circle, rgba(255, 199, 222, 0.76), transparent 66%);
     }
 
     .blob.yellow {
-      background: radial-gradient(circle, rgba(255, 228, 129, 0.66), transparent 66%);
+      background: radial-gradient(circle, rgba(255, 229, 132, 0.66), transparent 66%);
     }
 
     .glass-card,
@@ -131,8 +127,8 @@
     .hero-card,
     .footer,
     .music-btn {
-      backdrop-filter: var(--blur) saturate(145%);
-      -webkit-backdrop-filter: var(--blur) saturate(145%);
+      backdrop-filter: blur(18px) saturate(145%);
+      -webkit-backdrop-filter: blur(18px) saturate(145%);
     }
 
     .glass-card {
@@ -143,7 +139,7 @@
       border-radius: var(--radius-xl);
       text-align: center;
       background: linear-gradient(180deg, rgba(255,255,255,0.50), rgba(255,255,255,0.22));
-      border: 1px solid var(--glass-border);
+      border: 1px solid var(--glassBorder);
       box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.72);
       animation: floatCard 4.5s ease-in-out infinite;
     }
@@ -162,7 +158,7 @@
 
     .tiny {
       font-size: .92rem;
-      color: var(--text-soft);
+      color: var(--textSoft);
       margin-bottom: 10px;
       letter-spacing: .3px;
     }
@@ -171,15 +167,15 @@
       font-family: "Great Vibes", cursive;
       font-size: clamp(3.2rem, 9vw, 5.2rem);
       line-height: 1;
-      color: #cd91a8;
-      text-shadow: 0 10px 28px rgba(255, 189, 213, 0.34);
+      color: #ce92a9;
+      text-shadow: 0 10px 28px rgba(255, 188, 213, 0.34);
       margin-bottom: 12px;
     }
 
     .subtext {
       font-size: .98rem;
       line-height: 1.68;
-      color: var(--text-soft);
+      color: var(--textSoft);
       margin-bottom: 22px;
     }
 
@@ -190,7 +186,7 @@
       padding: 14px 30px;
       font-weight: 700;
       font-size: 1rem;
-      transition: transform .22s ease, box-shadow .25s ease, opacity .25s ease, filter .25s ease;
+      transition: transform .22s ease, box-shadow .25s ease, filter .25s ease;
     }
 
     .btn:hover,
@@ -214,11 +210,30 @@
       box-shadow: 0 8px 24px rgba(255, 197, 222, 0.16);
     }
 
+    .music-btn {
+      position: fixed;
+      top: max(16px, env(safe-area-inset-top));
+      right: 16px;
+      z-index: 60;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,0.58);
+      border-radius: 50%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.44), rgba(255,255,255,0.18));
+      box-shadow: var(--shadowSoft), inset 0 1px 0 rgba(255,255,255,0.74);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      color: var(--textSoft);
+      cursor: pointer;
+      opacity: .94;
+    }
+
     .envelope-scene {
+      z-index: 30;
       display: grid;
       place-items: center;
       padding: 22px;
-      z-index: 30;
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
@@ -234,10 +249,10 @@
     .envelope-panel {
       position: relative;
       overflow: hidden;
-      width: min(94vw, 480px);
+      width: min(94vw, 500px);
       padding: 22px;
-      border-radius: 34px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.44), rgba(255,255,255,0.21));
+      border-radius: 36px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.46), rgba(255,255,255,0.22));
       border: 1px solid rgba(255,255,255,0.62);
       box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.72);
       text-align: center;
@@ -253,7 +268,7 @@
 
     .envelope {
       width: 100%;
-      height: 300px;
+      height: 330px;
       position: relative;
       perspective: 1400px;
     }
@@ -261,13 +276,12 @@
     .env-shell {
       position: absolute;
       inset: auto 0 0 0;
-      height: 200px;
-      border-radius: 0 0 28px 28px;
-      background: linear-gradient(180deg, rgba(255,246,249,0.97), rgba(255,232,240,0.92));
-      border: 1px solid rgba(255, 218, 230, 0.80);
-      box-shadow: 0 18px 38px rgba(255, 188, 216, 0.18);
+      height: 210px;
+      border-radius: 0 0 30px 30px;
+      background: linear-gradient(180deg, rgba(255,246,249,0.98), rgba(255,231,240,0.94));
+      border: 1px solid rgba(255, 218, 230, 0.82);
+      box-shadow: 0 20px 40px rgba(255, 188, 216, 0.18);
       overflow: hidden;
-      backdrop-filter: blur(8px);
     }
 
     .env-left,
@@ -287,7 +301,7 @@
 
     .env-left::before {
       clip-path: polygon(0 0, 0 100%, 58% 100%);
-      background: rgba(255, 224, 236, 0.98);
+      background: rgba(255, 225, 237, 0.99);
     }
 
     .env-right::before {
@@ -296,20 +310,20 @@
     }
 
     .env-bottom::before {
-      clip-path: polygon(0 100%, 50% 38%, 100% 100%);
-      background: rgba(255, 205, 224, 0.98);
+      clip-path: polygon(0 100%, 50% 35%, 100% 100%);
+      background: rgba(255, 202, 223, 0.98);
     }
 
     .flap {
       position: absolute;
       left: 50%;
-      top: 92px;
+      top: 98px;
       width: 100%;
-      height: 136px;
+      height: 145px;
       transform: translateX(-50%);
       transform-origin: top center;
       transition: transform 1.15s ease;
-      z-index: 5;
+      z-index: 6;
     }
 
     .flap::before {
@@ -318,23 +332,23 @@
       inset: 0;
       clip-path: polygon(0 0, 50% 100%, 100% 0);
       border-radius: 18px 18px 0 0;
-      background: linear-gradient(180deg, rgba(255,242,247,0.98), rgba(255,220,233,0.96));
-      border: 1px solid rgba(255, 221, 232, 0.72);
-      box-shadow: 0 10px 20px rgba(255, 193, 218, 0.14);
+      background: linear-gradient(180deg, rgba(255,243,248,0.99), rgba(255,219,233,0.98));
+      border: 1px solid rgba(255, 219, 231, 0.78);
+      box-shadow: 0 12px 20px rgba(255, 193, 218, 0.16);
     }
 
     .seal {
       position: absolute;
       left: 50%;
-      top: 150px;
+      top: 162px;
       transform: translateX(-50%);
-      width: 58px;
-      height: 58px;
+      width: 62px;
+      height: 62px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      font-size: 1.25rem;
-      background: linear-gradient(135deg, #fff2a8, #ffd455);
+      font-size: 1.3rem;
+      background: linear-gradient(135deg, #fff4b0, #ffd454);
       box-shadow: 0 12px 24px rgba(255, 210, 92, 0.35);
       z-index: 8;
       transition: opacity .35s ease, transform .35s ease;
@@ -343,31 +357,65 @@
     .letter {
       position: absolute;
       left: 50%;
-      bottom: 32px;
+      bottom: 34px;
       transform: translateX(-50%) translateY(0);
-      width: 86%;
-      min-height: 182px;
-      padding: 22px 16px;
-      border-radius: 24px;
+      width: 84%;
+      min-height: 215px;
+      padding: 24px 18px 18px;
+      border-radius: 26px;
       text-align: center;
-      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,247,251,0.91));
-      border: 1px solid rgba(255, 232, 240, 0.90);
-      box-shadow: 0 18px 34px rgba(255, 194, 220, 0.16);
-      z-index: 2;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,248,251,0.93));
+      border: 1px solid rgba(255, 233, 241, 0.95);
+      box-shadow:
+        0 20px 34px rgba(255, 194, 220, 0.18),
+        inset 0 1px 0 rgba(255,255,255,0.95);
+      z-index: 3;
       transition: transform 1.15s ease;
+      overflow: hidden;
+    }
+
+    .letter::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0,
+          transparent 28px,
+          rgba(240, 207, 223, 0.20) 29px,
+          transparent 30px
+        );
+      pointer-events: none;
+      opacity: .55;
+    }
+
+    .letter::after {
+      content: "💛";
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      font-size: 1rem;
+      opacity: .65;
     }
 
     .letter h2 {
+      position: relative;
+      z-index: 1;
       font-family: "Great Vibes", cursive;
-      font-size: 2.45rem;
-      color: #d28aa4;
+      font-size: 2.7rem;
+      color: #d18aa3;
       margin-bottom: 8px;
     }
 
     .letter p {
+      position: relative;
+      z-index: 1;
       font-size: .95rem;
-      line-height: 1.7;
-      color: var(--text-soft);
+      line-height: 1.8;
+      color: var(--textSoft);
+      padding: 0 2px;
     }
 
     .open-envelope .flap {
@@ -375,12 +423,12 @@
     }
 
     .open-envelope .letter {
-      transform: translateX(-50%) translateY(-92px);
+      transform: translateX(-50%) translateY(-112px);
     }
 
     .open-envelope .seal {
       opacity: 0;
-      transform: translateX(-50%) scale(.8);
+      transform: translateX(-50%) scale(.82);
     }
 
     .buttons-row {
@@ -401,25 +449,6 @@
     .main-page.show {
       opacity: 1;
       visibility: visible;
-    }
-
-    .music-btn {
-      position: fixed;
-      top: max(16px, env(safe-area-inset-top));
-      right: 16px;
-      z-index: 60;
-      width: 48px;
-      height: 48px;
-      border: 1px solid rgba(255,255,255,0.58);
-      border-radius: 50%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.44), rgba(255,255,255,0.18));
-      box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255,255,255,0.74);
-      display: grid;
-      place-items: center;
-      font-size: 1.1rem;
-      color: var(--text-soft);
-      cursor: pointer;
-      opacity: .92;
     }
 
     .bg-decor .soft-orb {
@@ -450,10 +479,10 @@
 
     .fall {
       position: absolute;
-      top: -60px;
+      top: -70px;
       user-select: none;
       animation: fall linear infinite;
-      opacity: 0.94;
+      opacity: .95;
       filter: drop-shadow(0 8px 12px rgba(255, 209, 82, 0.16));
       will-change: transform;
     }
@@ -484,9 +513,9 @@
       padding: 24px 18px;
       border-radius: 30px;
       text-align: center;
-      background: linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,255,255,0.18));
+      background: linear-gradient(180deg, rgba(255,255,255,0.36), rgba(255,255,255,0.18));
       border: 1px solid rgba(255,255,255,0.56);
-      box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255,255,255,0.72);
+      box-shadow: var(--shadowSoft), inset 0 1px 0 rgba(255,255,255,0.72);
       margin-top: 6px;
       transform: translateY(16px);
       animation: sceneIn .9s ease forwards;
@@ -504,15 +533,15 @@
 
     .hero-card p {
       margin-top: 8px;
-      color: var(--text-soft);
+      color: var(--textSoft);
       font-size: 1rem;
       line-height: 1.72;
     }
 
     .bouquet-wrap {
       position: relative;
-      width: min(96vw, 760px);
-      height: min(62vh, 650px);
+      width: min(97vw, 820px);
+      height: min(64vh, 680px);
       display: flex;
       justify-content: center;
       align-items: end;
@@ -520,26 +549,26 @@
 
     .glass-glow {
       position: absolute;
-      bottom: 24px;
-      width: 90%;
-      height: 36%;
+      bottom: 18px;
+      width: 92%;
+      height: 38%;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 221, 112, 0.44), transparent 70%);
-      filter: blur(22px);
+      background: radial-gradient(circle, rgba(255, 223, 114, 0.46), transparent 70%);
+      filter: blur(24px);
     }
 
     .bouquet-card {
       position: absolute;
       bottom: 0;
       overflow: hidden;
-      width: min(92vw, 680px);
-      height: min(56vh, 560px);
-      border-radius: 40px;
+      width: min(93vw, 720px);
+      height: min(58vh, 590px);
+      border-radius: 42px;
       background: linear-gradient(180deg, rgba(255,255,255,0.24), rgba(255,255,255,0.12));
-      border: 1px solid rgba(255,255,255,0.46);
+      border: 1px solid rgba(255,255,255,0.48);
       box-shadow:
-        0 20px 48px rgba(255, 201, 126, 0.12),
-        inset 0 1px 0 rgba(255,255,255,0.62);
+        0 22px 50px rgba(255, 201, 126, 0.12),
+        inset 0 1px 0 rgba(255,255,255,0.64);
     }
 
     .bouquet-card::after {
@@ -553,11 +582,53 @@
       pointer-events: none;
     }
 
+    .wrap-paper {
+      position: absolute;
+      bottom: 0;
+      width: 260px;
+      height: 220px;
+      background: linear-gradient(180deg, rgba(255,244,214,0.92), rgba(255,230,185,0.82));
+      clip-path: polygon(50% 0, 100% 22%, 84% 100%, 16% 100%, 0 22%);
+      filter: drop-shadow(0 14px 20px rgba(255, 199, 120, 0.18));
+      opacity: .8;
+    }
+
+    .ribbon {
+      position: absolute;
+      bottom: 92px;
+      width: 132px;
+      height: 32px;
+      background: linear-gradient(135deg, #ffd66a, #ffbf34);
+      border-radius: 999px;
+      box-shadow: 0 8px 16px rgba(255, 198, 60, 0.26);
+    }
+
+    .ribbon::before,
+    .ribbon::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, #ffd66a, #ffbf34);
+      border-radius: 8px 18px 8px 18px;
+    }
+
+    .ribbon::before {
+      left: -20px;
+      transform: rotate(35deg);
+    }
+
+    .ribbon::after {
+      right: -20px;
+      transform: rotate(-35deg);
+    }
+
     .flower {
       position: absolute;
-      bottom: 118px;
-      width: 140px;
-      height: 140px;
+      bottom: 132px;
+      width: 138px;
+      height: 138px;
       transform-origin: bottom center;
       animation: flowerFloat 5.6s ease-in-out infinite;
     }
@@ -579,7 +650,7 @@
       margin-top: -60px;
       border-radius: 50% 50% 44% 44%;
       transform-origin: center bottom;
-      background: linear-gradient(180deg, #fff4ad, #ffd24a 58%, #ffab1d);
+      background: linear-gradient(180deg, #fff5ae, #ffd549 58%, #ffad1e);
       box-shadow:
         0 0 14px rgba(255, 215, 97, 0.26),
         inset 0 -7px 10px rgba(255, 166, 41, 0.20);
@@ -593,49 +664,63 @@
       top: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #8d5a2e, #60381a 66%, #40230f);
+      background:
+        radial-gradient(circle at 30% 30%, #936033, #653a1c 66%, #44240f);
       z-index: 5;
       box-shadow: inset 0 0 12px rgba(0,0,0,0.22);
+    }
+
+    .core::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 50%;
+      box-shadow:
+        -8px -4px 0 rgba(50, 27, 12, 0.25),
+        8px 6px 0 rgba(50, 27, 12, 0.2),
+        0 12px 0 rgba(50, 27, 12, 0.16);
     }
 
     .stem {
       position: absolute;
       left: 50%;
-      bottom: -176px;
+      bottom: -188px;
       transform: translateX(-50%);
       width: 10px;
-      height: 220px;
+      height: 230px;
       border-radius: 999px;
-      background: linear-gradient(180deg, #b3f59c, #56bf61);
+      background: linear-gradient(180deg, #bdf7a5, #56bf61);
       box-shadow: 0 0 12px rgba(103, 215, 105, 0.14);
     }
 
     .leaf {
       position: absolute;
-      width: 64px;
-      height: 30px;
+      width: 66px;
+      height: 32px;
       border-radius: 60px 0 60px 0;
-      background: radial-gradient(circle at 30% 30%, #c7ffab, #62c55a 70%, #4aa34a);
+      background: radial-gradient(circle at 30% 30%, #ccffb6, #62c55a 70%, #4aa34a);
       box-shadow: 0 10px 16px rgba(107, 204, 100, 0.12);
     }
 
     .leaf.left {
       left: -42px;
-      bottom: -48px;
+      bottom: -52px;
       transform: rotate(-28deg);
     }
 
     .leaf.right {
       right: -42px;
-      bottom: -12px;
+      bottom: -14px;
       transform: scaleX(-1) rotate(-28deg);
     }
 
-    .f1 { left: 2%; transform: rotate(-14deg) scale(1.00); animation-delay: 0s; }
-    .f2 { left: 18%; bottom: 194px; transform: rotate(-7deg) scale(1.07); animation-delay: .5s; }
-    .f3 { left: 38%; bottom: 126px; transform: rotate(0deg) scale(1.14); animation-delay: .8s; }
-    .f4 { right: 18%; bottom: 194px; transform: rotate(7deg) scale(1.07); animation-delay: .3s; }
-    .f5 { right: 2%; transform: rotate(14deg) scale(1.00); animation-delay: 1s; }
+    .f1 { left: 1%; transform: rotate(-16deg) scale(1.00); animation-delay: 0s; }
+    .f2 { left: 13%; bottom: 228px; transform: rotate(-10deg) scale(1.04); animation-delay: .5s; }
+    .f3 { left: 28%; bottom: 160px; transform: rotate(-3deg) scale(1.12); animation-delay: .8s; }
+    .f4 { left: 43%; bottom: 126px; transform: rotate(0deg) scale(1.18); animation-delay: .2s; }
+    .f5 { right: 28%; bottom: 160px; transform: rotate(3deg) scale(1.12); animation-delay: .6s; }
+    .f6 { right: 13%; bottom: 228px; transform: rotate(10deg) scale(1.04); animation-delay: .9s; }
+    .f7 { right: 1%; transform: rotate(16deg) scale(1.00); animation-delay: .3s; }
 
     .footer {
       width: min(92vw, 540px);
@@ -699,7 +784,7 @@
 
     @keyframes flowerFloat {
       0%,100% { transform: translateY(0px); }
-      50% { transform: translateY(-6px); }
+      50% { transform: translateY(-7px); }
     }
 
     @keyframes burst {
@@ -707,48 +792,46 @@
       100% { transform: translate(var(--x), var(--y)) scale(1.2) rotate(360deg); opacity: 0; }
     }
 
-    @media (max-width: 560px) {
-      .glass-card {
-        padding: 24px 18px;
-      }
-
+    @media (max-width: 700px) {
       .envelope {
-        height: 272px;
+        height: 300px;
       }
 
       .env-shell {
-        height: 184px;
+        height: 190px;
       }
 
       .flap {
-        top: 86px;
+        top: 92px;
       }
 
       .letter {
-        min-height: 162px;
-        padding: 18px 14px;
-      }
-
-      .letter h2 {
-        font-size: 2.05rem;
-      }
-
-      .letter p {
-        font-size: .90rem;
+        min-height: 195px;
+        width: 86%;
       }
 
       .bouquet-wrap {
-        height: 53vh;
+        height: 54vh;
       }
 
       .bouquet-card {
-        height: 48vh;
+        height: 49vh;
         border-radius: 30px;
       }
 
+      .wrap-paper {
+        width: 210px;
+        height: 180px;
+      }
+
+      .ribbon {
+        width: 110px;
+      }
+
       .flower {
-        width: 108px;
-        height: 108px;
+        width: 110px;
+        height: 110px;
+        bottom: 115px;
       }
 
       .petal {
@@ -764,8 +847,8 @@
       }
 
       .stem {
-        height: 170px;
-        bottom: -132px;
+        height: 180px;
+        bottom: -144px;
       }
 
       .leaf {
@@ -773,15 +856,45 @@
         height: 24px;
       }
 
-      .hero-card {
-        border-radius: 24px;
-        padding: 20px 14px;
-      }
+      .f1 { left: 0; }
+      .f2 { left: 10%; bottom: 190px; }
+      .f3 { left: 24%; bottom: 145px; }
+      .f4 { left: 38%; bottom: 120px; }
+      .f5 { right: 24%; bottom: 145px; }
+      .f6 { right: 10%; bottom: 190px; }
+      .f7 { right: 0; }
 
       .music-btn {
         width: 44px;
         height: 44px;
         font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .glass-card {
+        padding: 24px 18px;
+      }
+
+      .title-main {
+        font-size: clamp(2.9rem, 10vw, 4.4rem);
+      }
+
+      .letter h2 {
+        font-size: 2.15rem;
+      }
+
+      .letter p {
+        font-size: .90rem;
+      }
+
+      .hero-card {
+        border-radius: 24px;
+        padding: 20px 14px;
+      }
+
+      .hero-card h1 {
+        font-size: clamp(2.8rem, 10vw, 4.6rem);
       }
     }
   </style>
@@ -820,8 +933,8 @@
           <h2>Para ti</h2>
           <p>
             Hoy quise regalarte algo bonito, suave y lleno de ternura:
-            unas flores amarillas para alegrarte un poquito el día
-            y sacarte una sonrisa.
+            unas flores amarillas para alegrarte el día
+            y sacarte una sonrisa bonita.
           </p>
         </div>
 
@@ -853,45 +966,29 @@
       <div class="bouquet-wrap">
         <div class="glass-glow"></div>
         <div class="bouquet-card"></div>
+        <div class="wrap-paper"></div>
+        <div class="ribbon"></div>
 
         <div class="flower f1">
-          <div class="petals"></div>
-          <div class="core"></div>
-          <div class="stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
+          <div class="petals"></div><div class="core"></div><div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
         </div>
-
         <div class="flower f2">
-          <div class="petals"></div>
-          <div class="core"></div>
-          <div class="stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
+          <div class="petals"></div><div class="core"></div><div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
         </div>
-
         <div class="flower f3">
-          <div class="petals"></div>
-          <div class="core"></div>
-          <div class="stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
+          <div class="petals"></div><div class="core"></div><div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
         </div>
-
         <div class="flower f4">
-          <div class="petals"></div>
-          <div class="core"></div>
-          <div class="stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
+          <div class="petals"></div><div class="core"></div><div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
         </div>
-
         <div class="flower f5">
-          <div class="petals"></div>
-          <div class="core"></div>
-          <div class="stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
+          <div class="petals"></div><div class="core"></div><div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
+        </div>
+        <div class="flower f6">
+          <div class="petals"></div><div class="core"></div><div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
+        </div>
+        <div class="flower f7">
+          <div class="petals"></div><div class="core"></div><div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
         </div>
       </div>
 
@@ -915,7 +1012,6 @@
     const petalBurst = document.getElementById("petalBurst");
 
     let letterOpened = false;
-    let musicStarted = false;
     let burstCooldown = false;
 
     function createPetals() {
@@ -931,8 +1027,8 @@
 
     function createFloatingBlobs() {
       const blobs = [
-        { cls: "pink", size: 230, left: "4%", top: "8%", delay: "0s" },
-        { cls: "yellow", size: 250, left: "76%", top: "5%", delay: "2s" },
+        { cls: "pink", size: 240, left: "4%", top: "8%", delay: "0s" },
+        { cls: "yellow", size: 260, left: "76%", top: "5%", delay: "2s" },
         { cls: "yellow", size: 220, left: "12%", top: "76%", delay: "1s" },
         { cls: "pink", size: 210, left: "74%", top: "72%", delay: "3s" }
       ];
@@ -987,12 +1083,12 @@
 
     function createFallingFlowers() {
       const icons = ["🌼", "💛", "✨", "🌸", "🌻"];
-      for (let i = 0; i < 65; i++) {
+      for (let i = 0; i < 85; i++) {
         const el = document.createElement("div");
         el.className = "fall";
         el.textContent = icons[Math.floor(Math.random() * icons.length)];
         el.style.left = Math.random() * 100 + "vw";
-        el.style.fontSize = (16 + Math.random() * 18) + "px";
+        el.style.fontSize = (16 + Math.random() * 20) + "px";
         el.style.animationDuration = (8 + Math.random() * 8) + "s";
         el.style.animationDelay = (Math.random() * 10) + "s";
         fallingArea.appendChild(el);
@@ -1001,7 +1097,6 @@
 
     function playMusic() {
       bgMusic.play().then(() => {
-        musicStarted = true;
         musicBtn.textContent = "🔊";
       }).catch(() => {
         musicBtn.textContent = "🔇";
