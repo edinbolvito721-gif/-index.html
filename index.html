@@ -25,7 +25,7 @@ body{
   text-align:center;
 }
 
-/* pantalla inicio */
+/* inicio */
 #start{
   position:fixed;inset:0;
   display:flex;justify-content:center;align-items:center;
@@ -57,11 +57,7 @@ button{
   width:320px;
 }
 
-#mensaje{
-  margin-top:10px;
-}
-
-/* flores */
+/* principal */
 #main{
   position:fixed;inset:0;
   display:none;
@@ -73,39 +69,21 @@ button{
 }
 
 .hero h1{
-  font-size:60px;
+  font-size:55px;
   color:#e0a32c;
 }
 
-/* flores */
-.flower{
-  position:absolute;
-  bottom:100px;
-}
-
-.petalo{
-  width:40px;height:70px;
-  background:linear-gradient(#fff3a8,#ffb21f);
-  border-radius:50%;
-  position:absolute;
-}
-
-.centro{
-  width:50px;height:50px;
-  background:#5b3417;
-  border-radius:50%;
-  position:absolute;
-}
-
-/* animación */
+/* flores cayendo */
 @keyframes caer{
-  0%{transform:translateY(-50px);}
-  100%{transform:translateY(100vh);}
+  0%{transform:translateY(-60px) rotate(0deg); opacity:0;}
+  10%{opacity:1;}
+  100%{transform:translateY(110vh) rotate(360deg); opacity:0.2;}
 }
 
 .fall{
   position:absolute;
   animation:caer linear infinite;
+  filter:drop-shadow(0 5px 10px rgba(255,200,0,.2));
 }
 
 </style>
@@ -130,15 +108,12 @@ button{
 <div id="carta">
   <div class="glass carta-box">
     <h1>Para todas las chicas 💛</h1>
-    <p id="mensaje">
+    <p>
       Hoy quiero dedicar estas flores amarillas a todas las chicas,
       por su luz, su ternura y la forma tan bonita en la que hacen
       el mundo un lugar mejor.
 
-      Que nunca les falte una sonrisa, un momento de paz,
-      y alguien que valore lo especiales que son.
-
-      Esto es para ustedes 💛✨
+      Que nunca les falte una sonrisa y momentos bonitos 💛✨
     </p>
     <button onclick="verFlores()">Ver flores 🌼</button>
   </div>
@@ -147,8 +122,8 @@ button{
 <!-- principal -->
 <div id="main">
   <div class="hero">
-    <h1>Flores Amarillas 💛</h1>
-    <p>Para todas las chicas con cariño ✨</p>
+    <h1>flores amarillas 💛</h1>
+    <p>un pequeño detalle bonito para ustedes 🌼</p>
   </div>
 
   <div id="fall"></div>
@@ -168,18 +143,22 @@ function verFlores(){
   crearFlores();
 }
 
-/* flores cayendo */
+/* MUCHAS flores bonitas cayendo */
 function crearFlores(){
   const area=document.getElementById("fall");
-  const iconos=["🌼","💛","✨"];
+  const iconos=["🌼","💛","✨","🌻","🌸"];
 
-  for(let i=0;i<30;i++){
+  for(let i=0;i<70;i++){  // MÁS FLORES
     let el=document.createElement("div");
     el.className="fall";
     el.innerText=iconos[Math.floor(Math.random()*iconos.length)];
+
     el.style.left=Math.random()*100+"vw";
-    el.style.animationDuration=(5+Math.random()*5)+"s";
-    el.style.fontSize=(15+Math.random()*20)+"px";
+    el.style.fontSize=(18+Math.random()*25)+"px";
+
+    el.style.animationDuration=(6+Math.random()*6)+"s";
+    el.style.animationDelay=(Math.random()*5)+"s";
+
     area.appendChild(el);
   }
 }
